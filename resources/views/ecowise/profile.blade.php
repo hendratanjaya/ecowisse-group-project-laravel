@@ -25,7 +25,7 @@
 
             </div>
             <div class="col-6 d-flex justify-content-center">
-                <img src="{{ asset('img/profile.jpg') }}" width="150" height="auto" class="rounded-circle">
+                <img src="{{ asset('img/profile.JPG') }}" width="150" height="auto" class="rounded-circle">
             </div>
             <div class="col-3">
                 
