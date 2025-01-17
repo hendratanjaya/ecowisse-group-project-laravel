@@ -11,7 +11,7 @@
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
-    "buildCommand": "vite build",
+    "buildCommand": "npm i $$ npm run build",
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
