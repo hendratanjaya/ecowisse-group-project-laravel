@@ -16,7 +16,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://vercel.com/hendra-tanuwijayas-projects/ecowise/GQtd54LpTYxxT7ma1xr9Pp5gPuTw",
+        "APP_URL": "https://ecowise-pi.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
