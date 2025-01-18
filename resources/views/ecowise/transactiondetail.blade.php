@@ -41,7 +41,7 @@
                                 <div>
                                     <h6>{{$detail->product->name}}</h6>
                                     <p style="margin:0 ;">
-                                        @lang('ecowise.ro') {{ number_format($detail->product->price, 0, ',', '.') }} ({{$detail->quantity}} pcs)
+                                        @lang('ecowise.rp') {{ number_format($detail->product->price, 0, ',', '.') }} ({{$detail->quantity}} pcs)
                                     </p>
                                 </div>
                             </div>

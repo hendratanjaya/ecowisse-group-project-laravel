@@ -57,7 +57,7 @@
                                     </div>
                                 @elseif(auth()->user()->roles == 'admin')
                                     <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
-                                        <h2>@lang('ecowise.popular_products')</h2>
+                                        <h2>@lang('ecowise.all_products')</h2>
                                     </div>
 
                                     <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-end">
@@ -102,7 +102,6 @@
         </div>
         
     </div>
-    <br>
     <div class="d-flex justify-content-center">
         {{ $products->links() }}
     </div>
@@ -116,6 +115,7 @@
 
     .card-title, .card-text {
         text-align: center;
+        text
     }
 </style>
 

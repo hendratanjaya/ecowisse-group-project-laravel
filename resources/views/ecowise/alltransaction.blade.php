@@ -16,7 +16,15 @@
                 <li class="nav-item dropdown me-3" style="list-style-type: none;">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <strong>@lang('ecowise.filter')</strong>
+                            <strong>
+                                @if (request()->get('filter') == 'paid')
+                                    @lang('ecowise.paid')
+                                @elseif (request()->get('filter') == 'unpaid')
+                                    @lang('ecowise.paid')
+                                @else
+                                    @lang('ecowise.all')
+                                @endif
+                            </strong>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('alltransactions.page', ['filter' => 'all']) }}">@lang('ecowise.all')</a></li>
