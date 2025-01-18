@@ -49,7 +49,7 @@ class TransactionController extends Controller
             'delivery_address' => $delivery['delivery_address'],
         ]);
     
-        return redirect()->route('checkout.page')->with('success', 'Delivery address updated successfully.');
+        return redirect()->back();
     }
 
     public function create(Request $request){
@@ -63,7 +63,7 @@ class TransactionController extends Controller
         $deliveryPhone = session('delivery_phone', auth()->user()->phone);
         $deliveryAddress = session('delivery_address', auth()->user()->address);
 
-        $delivery = DeliveryModel::create([
+        $delivery = DeliveryModel::firstOrCreate([
             'name' => $deliveryName,
             'phone' => $deliveryPhone,
             'address' => $deliveryAddress,
@@ -165,7 +165,7 @@ class TransactionController extends Controller
         $deliveryPhone = session('delivery_phone', auth()->user()->phone);
         $deliveryAddress = session('delivery_address', auth()->user()->address);
 
-        $delivery = DeliveryModel::create([
+        $delivery = DeliveryModel::firstOrCreate([
             'name' => $deliveryName,
             'phone' => $deliveryPhone,
             'address' => $deliveryAddress,
@@ -286,7 +286,7 @@ class TransactionController extends Controller
         'redeem_discount' => $discount,
     ]);
 
-    return redirect()->route('checkout.page')->with('success', 'Points redeemed successfully.');
+    return redirect()->back();
 }
 
     public function success($id){
