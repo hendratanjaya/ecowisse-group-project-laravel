@@ -9,48 +9,35 @@
         </div>
     @endif
     <div class="container-fluid">
-    <div class="row">
-            <div class="col-3">
-
-            </div>
-            <div class="col-6 d-flex justify-content-center">
+        <div class="row">
+            <div class="col-12 text-center">
                 <h1>@lang('ecowise.my_profile')</h1>
             </div>
-            <div class="col-3">
-                
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="{{ $user->image ? asset('uploads/' . $user->image) : asset('img/profile.jpg') }}" 
+                        width="150" height="auto" class="rounded-circle">
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
-
-            </div>
-            <div class="col-6 d-flex justify-content-center">
-                <img src="{{ asset('img/profile.JPG') }}" width="150" height="auto" class="rounded-circle">
-            </div>
-            <div class="col-3">
-                
+            <div class="col-12 text-center mt-1">
+                <div class="d-flex align-items-center justify-content-center">
+                <a href="" style="color:#B8C8B4 ;" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                    <h6>@lang('ecowise.upload')</h6>
+                </a>
+                </div>
             </div>
         </div>
-        <br>
         <div class="row">
-            <div class="col-3">
-
-            </div>
-            <div class="col-6 d-flex justify-content-center">
-                <div class="d-flex align-items-center">
+            <div class="col-12 text-center">
+                <div class="d-flex align-items-center justify-content-center">
                     <h6 style="margin: 0;">{{$user->earth_star}} Earth Stars</h6><img src="{{ asset('img/earthstar.png')}}" width="35" height="auto" class="rounded-circle">
                 </div>
             </div>
-            <div class="col-3">
-                
-            </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-4">
-
-            </div>
-            <div class="col-4 d-flex flex-column justify-content-center border border-dark p-3" style="border-radius:10px;">
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-6 col-lg-4 rounded-3 d-flex flex-column justify-content-center border border-dark p-3 mt-3" >
     @if (request('edit'))
         <!-- Edit Mode -->
         <form action="{{route('profile_update.page')}}" method="POST">
@@ -125,9 +112,6 @@
         </form>
     </div>
     @endif
-            <div class="col-4">
-                
-            </div>
         </div>
         <br>
     </div>
@@ -165,4 +149,29 @@
         border-color: black; 
         }
 </style>
+
+<!-- Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">@lang('ecowise.upload2')</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="uploadForm" method="POST" action="{{ route('upload_image') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="profilePicture" class="form-label">@lang('ecowise.select')</label>
+                        <input type="file" id="image" name="image" class="form-control" accept="image/*" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('ecowise.cancel')</button>
+                    <button type="submit" class="btn btn-primary">@lang('ecowise.upload')</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection

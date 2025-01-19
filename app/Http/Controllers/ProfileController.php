@@ -39,4 +39,19 @@ class ProfileController extends Controller
 
         return redirect()->route('profile.page')->with('success', __('ecowise.profile_msg'));
     }
+    public function upload_image(Request $request){
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $imagename = time().'.'.$request->image->extension();
+        $request->image->move(public_path('uploads'), $imagename);
+
+        $user = Auth::user();
+        $user->image = $imagename;
+        $user->save();
+
+        return redirect()->back();
+    }
+
 }

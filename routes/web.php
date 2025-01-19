@@ -15,7 +15,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\TransactionController;
 
 Route::get('/', function () {
-    return redirect()->route("home.page");
+    return view('welcome');
 });
 
 Route::middleware(['middleware' => 'ClearCheckoutSession', 'CheckRole:customer'])->prefix('/ecowise')->group(function(){
@@ -24,6 +24,7 @@ Route::middleware(['middleware' => 'ClearCheckoutSession', 'CheckRole:customer']
 
     Route::get('/profile', [ProfileController::class,'view'])->name('profile.page');
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile_update.page');
+    Route::post('/profile/upload', [ProfileController::class,'upload_image'])->name('upload_image');
 
     Route::get('/cart', [CartController::class,'view'])->name('cart.page');
     Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart_update');

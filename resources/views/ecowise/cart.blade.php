@@ -164,13 +164,13 @@
                 <div class="col-lg-5 col-md-5 col-sm-7 col-10">
                     <div class="card shadow" style="background-color:#ECFCCE">
                         <div class="card-body d-flex align-items-center">
-                        <div class="d-flex align-items-center" style="width: 48%;">
+                        <div class="d-flex align-items-center total-column" style="width: 48%;">
                             <h6>Total:</h6>
                         </div>
-                        <div class="d-flex align-items-center" style="width: 31%;">
+                        <div class="d-flex align-items-center price-column" style="width: 31%;">
                             <h5>@lang('ecowise.rp') {{ number_format($totalPrice, 0, ',', '.') }}</h5>
                         </div>
-                        <div class="d-flex align-items-center" style="width: 21%;">
+                        <div class="d-flex align-items-center checkout-column" style="width: 21%;">
                             <a type="submit" class="btn btn-primary" href="{{route('checkout.page')}}">@lang('ecowise.checkout')</a> 
                         </div>   
                         </div>

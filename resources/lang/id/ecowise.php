@@ -99,6 +99,9 @@ return [
 
     'rp' => 'Rp.',
     'checkout' => 'Beli',
+    'upload' => 'Unggah',
+    'upload2' => 'Unggah Foto Profil',
+    'select' => 'Pilih foto',
 
     'success' => 'Pembayaran Berhasil!',
     'finish' => 'Selesai',

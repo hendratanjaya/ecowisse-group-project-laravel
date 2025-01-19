@@ -20,7 +20,7 @@
                                 @if (request()->get('filter') == 'paid')
                                     @lang('ecowise.paid')
                                 @elseif (request()->get('filter') == 'unpaid')
-                                    @lang('ecowise.paid')
+                                    @lang('ecowise.unpaid')
                                 @else
                                     @lang('ecowise.all')
                                 @endif

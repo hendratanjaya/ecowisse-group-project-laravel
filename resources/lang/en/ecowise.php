@@ -99,6 +99,9 @@ return [
 
     'rp' => 'IDR',
     'checkout' => 'Checkout',
+    'upload' => 'Upload',
+    'upload2' => 'Upload Profile Picture',
+    'select' => 'Select an image',
 
     'success' => 'Payment Successfull!',
     'finish' => 'Finish',
