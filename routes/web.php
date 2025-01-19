@@ -15,7 +15,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\TransactionController;
 
 Route::get('/', function () {
-    return redirect()->route("home.page);
+    return redirect()->route("home.page");
 });
 
 Route::middleware(['middleware' => 'ClearCheckoutSession', 'CheckRole:customer'])->prefix('/ecowise')->group(function(){
