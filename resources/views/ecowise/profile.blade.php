@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <img src="{{ $user->image ? asset('uploads/' . $user->image) : asset('img/profile.jpg') }}" 
+                <img src="{{ $user->image ? asset('uploads/' . $user->image) : asset('img/profile.JPG') }}" 
                         width="150" height="auto" class="rounded-circle">
             </div>
         </div>
